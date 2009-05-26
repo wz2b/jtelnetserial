@@ -1,0 +1,10 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+This project is an implementation of the Java Communications API for serial ports that communicates with a remote serial port using the RFC-2217 telnet extension.
+
+
+= Requirements =
+
+This project requires that you have the RXTX libraries installed.
