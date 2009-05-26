@@ -9,8 +9,15 @@ This project is an implementation of the Java Communications API for serial port
 
 This project requires that you have the RXTX libraries installed.
 
+= Limitations =
+
+This library has many of the same limitations sredird has:
+  * No login processing or any other kind of authentication
+  * Lack of START_TLS support for encrypted communications
+
+I may add authentication if it is ever added to sredird, though there may be better ways.  sredird expects to "secure" itself by you using some kind of TCP wrapper.  This is not a great solution but may be an okay place to start. 
+
+
 = Telnet Implementation =
 
-Before I wrote this I tried to find a telnet implementation with a suitable API to my liking.  The only ones that looked good were commercial (and expensive) so I decided to write my own.
-
-A telnet client implements the TelnetListener interface, and will receive events for data, exceptions, and the various telnet commands like do, don't, will, won't, and more complex subnegotiations (like those used by rfc-2217).
+The telnet protocol implementation is separate from the RFC-2217 implementation and may be useful to those seeking a generic telnet protocol client.  Clients implements the TelnetListener interface, and will receive events for data, exceptions, and the various telnet commands like do, don't, will, won't, and more complex subnegotiations (like those used by rfc-2217).
