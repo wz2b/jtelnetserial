@@ -2,9 +2,15 @@
 
 = Introduction =
 
-This project is an implementation of the Java Communications API for serial ports that communicates with a remote serial port using the RFC-2217 telnet extension.
+This project is an implementation of the Java Communications API for serial ports that communicates with a remote serial port using the RFC-2217 telnet extension.  It includes its own telnet protocol implementation with a somewhat friendlier API.
 
 
 = Requirements =
 
 This project requires that you have the RXTX libraries installed.
+
+= Telnet Implementation =
+
+Before I wrote this I tried to find a telnet implementation with a suitable API to my liking.  The only ones that looked good were commercial (and expensive) so I decided to write my own.
+
+A telnet client implements the TelnetListener interface, and will receive events for data, exceptions, and the various telnet commands like do, don't, will, won't, and more complex subnegotiations (like those used by rfc-2217).
